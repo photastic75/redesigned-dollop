@@ -1,12 +1,12 @@
 class Image
 
   def initialize(array)
-    @image = array  
+    @row = array  
   end
 
   def output_image
-    @image.each do |f|
-      puts f.join # without join, each element of the array prints in a seperate line. Basically, we want to print each array as a line.
+    @row.each do |e| #for each element of the array, join them
+      puts e.join # without join, each element of the array prints in a seperate line. Basically, we want to convert each array into one value.
     end
   end
 
