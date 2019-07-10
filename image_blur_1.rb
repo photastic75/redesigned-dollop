@@ -20,15 +20,15 @@ class Image
     ones   
   end
 
-    def blur!
-        ones = get_ones
-        ones.each do |idx| # find the row_idx and num_idx of @image and update that value to 1
-          @image[idx[0] - 1][idx[1]] = 1 if idx[0] - 1 >= 0 # top
-          @image[idx[0] + 1][idx[1]] = 1 if idx[0] + 1 <= @image.length - 1 # bottom. limits blur to the last row
-          @image[idx[0]][idx[1] + 1] = 1 if idx[1] + 1 <= @image[idx[0]].length - 1 #right, limits blur to right most element of 2nd dimension
-          @image[idx[0]][idx[1] - 1] = 1 if idx[1] - 1 >= 0 # left
-        end
+  def blur!
+    ones = get_ones
+    ones.each do |idx| # find the row_idx and num_idx of @image and update that value to 1
+      @image[idx[0] - 1][idx[1]] = 1 if idx[0] - 1 >= 0 # top
+      @image[idx[0] + 1][idx[1]] = 1 if idx[0] + 1 <= @image.length - 1 # bottom. limits blur to the last row
+      @image[idx[0]][idx[1] + 1] = 1 if idx[1] + 1 <= @image[idx[0]].length - 1 #right, limits blur to right most element of 2nd dimension
+      @image[idx[0]][idx[1] - 1] = 1 if idx[1] - 1 >= 0 # left
     end
+  end
 end
 
 #goal is to out put the below variable
