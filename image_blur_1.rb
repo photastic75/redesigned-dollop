@@ -20,6 +20,13 @@ class Image
     ones   
   end
 
+  def blur_nyc!(blocks)
+    blocks.times do
+      blur!
+    end
+  end
+
+
   def blur!
     ones = get_ones
     ones.each do |idx| # find the row_idx and num_idx of @image and update that value to 1
@@ -40,5 +47,5 @@ image = Image.new([
   [0, 0, 0, 0]
 ])
 
-image.blur!
+image.blur_nyc!(3)
 image.output_image
